@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useState } from "react";
 import { Box, IconButton, useDisclosure } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { FaBars } from "react-icons/fa";
 import Sidebar from "./components/Sidebar.jsx"; // Import the new Sidebar component
 import Index from "./pages/Index.jsx";
 import Quotes from "./pages/Quotes.jsx"; // Import the new Quotes page
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Box>
         <IconButton
-          icon={<HamburgerIcon />}
+          icon={<FaBars />}
           onClick={toggleSidebar}
           variant="outline"
           aria-label="Open Sidebar"

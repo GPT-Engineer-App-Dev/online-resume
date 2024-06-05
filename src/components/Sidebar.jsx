@@ -1,5 +1,5 @@
 import { Box, Flex, IconButton, Link, VStack } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { FaTimes } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     >
       <Flex justify="flex-end" p={4}>
         <IconButton
-          icon={<CloseIcon />}
+          icon={<FaTimes />}
           onClick={onClose}
           variant="outline"
           aria-label="Close Sidebar"
