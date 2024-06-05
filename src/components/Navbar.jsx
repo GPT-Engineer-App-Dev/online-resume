@@ -6,7 +6,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg="blue.500" px={4}>
+    <Box bg="teal.500" px={4}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Box>Logo</Box>
         <IconButton
