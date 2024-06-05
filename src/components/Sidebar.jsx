@@ -1,5 +1,5 @@
 import { Box, Flex, IconButton, Link, VStack } from "@chakra-ui/react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaTrello } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -32,6 +32,10 @@ const Sidebar = ({ isOpen, onClose }) => {
         </Link>
         <Link as={RouterLink} to="/canvas" onClick={onClose}>
           Canvas
+        </Link>
+        <Link as={RouterLink} to="/board" onClick={onClose}>
+          <FaTrello />
+          Board
         </Link>
       </VStack>
     </Box>
