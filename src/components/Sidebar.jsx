@@ -30,6 +30,9 @@ const Sidebar = ({ isOpen, onClose }) => {
         <Link as={RouterLink} to="/quotes" onClick={onClose}>
           Quotes
         </Link>
+        <Link as={RouterLink} to="/canvas" onClick={onClose}>
+          Canvas
+        </Link>
       </VStack>
     </Box>
   );
