@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar.jsx"; // Import the new Sidebar compon
 import Navbar from "./components/Navbar.jsx"; // Import the new Navbar component
 import Index from "./pages/Index.jsx";
 import Quotes from "./pages/Quotes.jsx"; // Import the new Quotes page
+import Canvas from "./pages/Canvas.jsx"; // Import the new Canvas page
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route path="/quotes" element={<Quotes />} /> {/* Add route for Quotes page */}
+          <Route path="/canvas" element={<Canvas />} /> {/* Add route for Canvas page */}
         </Routes>
       </Box>
     </Router>
