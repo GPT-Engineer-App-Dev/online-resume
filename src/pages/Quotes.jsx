@@ -8,7 +8,7 @@ const quotes = [
 
 const Quotes = () => {
   return (
-    <Container maxW="container.lg" py={8}>
+    <Container maxW="container.lg" py={8} mt="60px">
       <Heading as="h1" size="xl" mb={6} textAlign="center">
         Quotes
       </Heading>

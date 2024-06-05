@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Box, IconButton, useDisclosure } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa";
 import Sidebar from "./components/Sidebar.jsx"; // Import the new Sidebar component
+import Navbar from "./components/Navbar.jsx"; // Import the new Navbar component
 import Index from "./pages/Index.jsx";
 import Quotes from "./pages/Quotes.jsx"; // Import the new Quotes page
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar />
       <Box>
         <IconButton
           icon={<FaBars />}

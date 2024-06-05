@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+    <Container centerContent maxW="container.md" display="flex" flexDirection="column" justifyContent="center" alignItems="center" mt="60px">
       <VStack spacing={8}>
         <Box textAlign="center">
           <Heading as="h1" size="2xl" mb={4}>Welcome to My Personal Website</Heading>
