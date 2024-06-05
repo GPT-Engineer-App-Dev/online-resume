@@ -1,5 +1,6 @@
 import { Container, Text, VStack, Box, Heading, Button, Image, Flex, HStack, Link } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Link as RouterLink } from "react-router-dom"; // Import RouterLink
 
 const Index = () => {
   return (
@@ -27,6 +28,9 @@ const Index = () => {
             Email
           </Button>
         </Flex>
+        <Button as={RouterLink} to="/quotes" colorScheme="teal" variant="solid">
+          View Quotes
+        </Button>
       </VStack>
       <Footer />
     </Container>
