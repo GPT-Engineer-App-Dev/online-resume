@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { VStack } from '@chakra-ui/react';
-import { Container, Heading, SimpleGrid, Box, Text, Link, Spinner } from '@chakra-ui/react';
+import { Table, Thead, Tbody, Tr, Th, Td, Input, Select, Box, VStack, Spinner, Container, Heading, Link } from '@chakra-ui/react';
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filterByAuthor, setFilterByAuthor] = useState('');
+  const [filterByScore, setFilterByScore] = useState('');
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -28,6 +30,13 @@ const Articles = () => {
     fetchArticles();
   }, []);
 
+  const filteredArticles = articles.filter(article => {
+    return (
+      (filterByAuthor === '' || article.by.toLowerCase().includes(filterByAuthor.toLowerCase())) &&
+      (filterByScore === '' || article.score >= parseInt(filterByScore))
+    );
+  });
+
   if (loading) {
     return (
       <Container centerContent>
@@ -41,19 +50,53 @@ const Articles = () => {
       <Heading as="h1" size="xl" mb={6} textAlign="center">
         Hacker News Articles
       </Heading>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-        {articles.map((article) => (
-          <Box key={article.id} p={5} shadow="md" borderWidth="1px" borderRadius="md">
-            <VStack spacing={4}>
-              <Link href={article.url} isExternal fontSize="lg" fontWeight="bold">
-                {article.title}
-              </Link>
-              <Text>By: {article.by}</Text>
-              <Text>Score: {article.score}</Text>
-            </VStack>
-          </Box>
-        ))}
-      </SimpleGrid>
+      <Box mb={4}>
+        <Input
+          placeholder="Filter by author"
+          value={filterByAuthor}
+          onChange={(e) => setFilterByAuthor(e.target.value)}
+          mb={2}
+        />
+        <Select
+          placeholder="Filter by score"
+          value={filterByScore}
+          onChange={(e) => setFilterByScore(e.target.value)}
+        >
+          <option value="10">10+</option>
+          <option value="50">50+</option>
+          <option value="100">100+</option>
+        </Select>
+      </Box>
+      <Table variant="simple">
+        <Thead>
+          <Tr>
+            <Th>Title</Th>
+            <Th>Author</Th>
+            <Th>Score</Th>
+            <Th>Link</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {filteredArticles.map((article) => (
+            <Tr key={article.id} onClick={() => setSelectedArticle(article)}>
+              <Td>{article.title}</Td>
+              <Td>{article.by}</Td>
+              <Td>{article.score}</Td>
+              <Td>
+                <Link href="#" onClick={(e) => { e.preventDefault(); setSelectedArticle(article); }}>
+                  View
+                </Link>
+              </Td>
+            </Tr>
+          ))}
+        </Tbody>
+      </Table>
+      {selectedArticle && (
+        <Box mt={8}>
+          <Heading as="h2" size="lg" mb={4}>Article Preview</Heading>
+          <iframe src={selectedArticle.url} width="100%" height="600px" title="Article Preview" />
+        </Box>
+      )}
     </Container>
   );
 };
