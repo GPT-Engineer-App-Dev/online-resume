@@ -1,5 +1,5 @@
 import { Box, Flex, Link, Spacer, Text } from "@chakra-ui/react";
-import { FaHome, FaQuoteRight, FaPaintBrush } from "react-icons/fa";
+import { FaHome, FaQuoteRight, FaPaintBrush, FaNewspaper } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -22,6 +22,10 @@ const Navbar = () => {
           <Link as={RouterLink} to="/canvas" display="flex" alignItems="center" color="white" mx={2}>
             <FaPaintBrush />
             <Text ml={1}>Canvas</Text>
+          </Link>
+          <Link as={RouterLink} to="/articles" display="flex" alignItems="center" color="white" mx={2}>
+            <FaNewspaper />
+            <Text ml={1}>Articles</Text>
           </Link>
         </Flex>
       </Flex>
