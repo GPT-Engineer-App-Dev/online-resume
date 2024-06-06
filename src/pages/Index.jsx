@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" display="flex" flexDirection="column" justifyContent="center" alignItems="center" mt="60px">
+    <Container centerContent maxW="container.md" display="flex" flexDirection="column" justifyContent="center" alignItems="center" mt="60px" minHeight="100vh" pb="60px">
       <VStack spacing={8}>
         <Box textAlign="center">
           <Heading as="h1" size="2xl" mb={4}>Welcome to My Personal Website</Heading>
@@ -39,7 +39,7 @@ const Index = () => {
 
 const Footer = () => {
   return (
-    <Box as="footer" width="100%" py={4} bg="gray.800" color="white" mt={8}>
+    <Box as="footer" width="100%" py={4} bg="gray.800" color="white" mt={8} position="fixed" bottom="0" left="0">
       <Container maxW="container.md">
         <Flex justify="space-between" align="center" direction={{ base: "column", md: "row" }} textAlign={{ base: "center", md: "left" }}>
           <Text mb={{ base: 2, md: 0 }}>© {new Date().getFullYear()} My Personal Website. All rights reserved.</Text>
