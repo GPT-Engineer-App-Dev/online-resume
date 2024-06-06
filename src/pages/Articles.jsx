@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { VStack } from '@chakra-ui/react';
 import { Container, Heading, SimpleGrid, Box, Text, Link, Spinner } from '@chakra-ui/react';
 
 const Articles = () => {
